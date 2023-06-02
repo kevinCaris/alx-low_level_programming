@@ -9,18 +9,16 @@
  *
  * Return: A pointer to the modified string.
  */
-char *string_toupper(char *s)
-{
-    int i;
+char* string_toupper(char* str) {
+    char* ptr = str;  // Pointer to iterate through the string
 
-    for (i = 0; s[i] != '\0'; i++)
-    {
-        if (s[i] >= 'a' && s[i] <= 'z')
-        {
-            s[i] -= 32;
+    while (*ptr) {
+        if (*ptr >= 'a' && *ptr <= 'z') {
+            *ptr = *ptr - 32;  // Convert lowercase letter to uppercase
         }
+        ptr++;
     }
 
-    return s;
+    return str;
 }
 
